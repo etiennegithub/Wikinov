@@ -1,4 +1,3 @@
 # Présentation
 
--Powerpoint
--Prézi
+-Powerpoint ou Prézi
