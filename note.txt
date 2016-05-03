@@ -1,0 +1,51 @@
+      		___====-_  _-====___                 		| 	A FAIRE
+           _--^^^#####//      \\#####^^^--_           		| 
+        _-^##########// (    ) \\##########^-_        		| *Faire une documention / wiki sur git
+       -############//  |\^^/|  \\############-       		| *Mobile First
+     _/############//   (@::@)   \\############\_     		| *Ne pas commit avec le mot de passe de vos base de donnée 
+    /#############((     \\//     ))#############\    		| *Planfication et répartition des taches / trello
+   -###############\\    (oo)    //###############-   		| *Verification des failles : XSS CRSF SQLI LFI INCLUDE/ .htacess
+  -#################\\  / VV \  //#################-  		| *Commenter son code
+ -###################\\/      \//###################- 		| *Cmmencer dés maintenant a préparer la presentation
+_#/|##########/\######(   /\   )######/\##########|\#_		|
+|/ |#/\#/\#/\/  \#/\##\  |  |  /##/\#/  \/\#/\#/\#| \|		|
+`  |/  V  V  `   V  \#\| |  | |/#/  V   '  V  V  \|  '		|
+   `   `  `      `   / | |  | | \   '      '  '   '   		|
+                    (  | |  | |  )                    		|
+                   __\ | |  | | /__                   		|
+                  (vvv(VVV)(VVV)vvv) 				|-----------------------------------------------------------------------------
+		______               _   			|
+		|  ___|             | |  			|
+		| |_ _ __ ___  _ __ | |_ 			|      	PREREQUIS
+		|  _| '__/ _ \| '_ \| __|			|
+		| | | | | (_) | | | | |_ 			|Voir fichier prerequis.txt "lol"
+		\_| |_|  \___/|_| |_|\__|			|
+								|
+			-HTML*					|-----------------------------------------------------------------------------
+			-CSS* OU SCSS				|
+			-Js*/jquery				|
+								|
+			FRAMEWORK				|	
+                         					|
+			-Boostrap				|
+			-Fundation 6*				|
+			-Sementic ui				|
+								|
+		______  ___  _____  _   __			|
+		| ___ \/ _ \/  __ \| | / /			|
+		| |_/ / /_\ \ /  \/| |/ / 			|			
+		| ___ \  _  | |    |    \ 			|
+		| |_/ / | | | \__/\| |\  \			|
+		\____/\_| |_/\____/\_| \_/			|
+								|
+								|
+			-PHP 5 en POD*				|
+			-Mysql*					|
+			-Phpmyadmin*				|
+								|
+			FRAMEWORK				|
+								|
+			-Composer*				|
+			-Cakephp*				|
+			-laravel				|
+			-Syfony					|
