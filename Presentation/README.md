@@ -1,4 +1,4 @@
 # Présentation
 
--Powerpoint*
+-Powerpoint
 -Prézi

@@ -24,28 +24,28 @@ _#/|##########/\######(   /\   )######/\##########|\#_		|
 			-HTML*					|-----------------------------------------------------------------------------
 			-CSS* OU SCSS				|
 			-Js*/jquery				|
-								|
-			FRAMEWORK				|	
-                         					|
+								|	Acceuil visible par tout le monde
+			FRAMEWORK				|		partie connexion pour tout le monde
+                         					|		pas de partie inscription
 			-Boostrap				|
-			-Fundation 6*				|
-			-Sementic ui				|
+			-Fundation 6*				|	si c'est un etudiants
+			-Sementic ui				|		email qui finis par @ynov.com 
+								|			seulement de tout les façon tout le monde a un compte
+		______  ___  _____  _   __			|				et il faudras juste l'activé
+		| ___ \/ _ \/  __ \| | / /			|	
+		| |_/ / /_\ \ /  \/| |/ / 			|	tout le monde pouras créée du contenus et seule celui		
+		| ___ \  _  | |    |    \ 			|		qui a crée le contenue pourras le supprimer (faille crsf)
+		| |_/ / | | | \__/\| |\  \			|			tout le monde pouras lire le contenu et si il est 
+		\____/\_| |_/\____/\_| \_/			|				autoriser a y interagir bah c'est ok
+								|	
+								|	si c'est un admin il pourras crée de nouvelles thématique
+			-PHP 5 en POD*				|	
+			-Mysql*					|	possibilité de charger des vidéo images de la musique etc.. + 
+			-Phpmyadmin*				|		une sort de description
 								|
-		______  ___  _____  _   __			|
-		| ___ \/ _ \/  __ \| | / /			|
-		| |_/ / /_\ \ /  \/| |/ / 			|			
-		| ___ \  _  | |    |    \ 			|
-		| |_/ / | | | \__/\| |\  \			|
-		\____/\_| |_/\____/\_| \_/			|
-								|
-								|
-			-PHP 5 en POD*				|
-			-Mysql*					|
-			-Phpmyadmin*				|
-								|
-			FRAMEWORK				|
-								|
-			-Composer*				|
-			-Cakephp*				|
+			FRAMEWORK				|	quand il commente il faut avoir un wysiwug
+								|	
+			-Composer*				|	systéme de messagerie en php ou avec des sockets
+			-Cakephp*				|	
 			-laravel				|
 			-Syfony					|
