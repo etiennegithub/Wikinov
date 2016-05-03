@@ -1,14 +1,12 @@
-# Wikinov
-```php
-<?php
-   echo 'Wikinov la platforme de l\'innovation!';
-?>
-```
-La plateforme a été realiser avec #PHP #HTML #CSS #JS #BOOSTRAP plus précisement avec le theme flatly de #bootswatch (https://bootswatch.com/).
+# php
 
-#Collaborateur
-								|||GitHub|||
-					   		------------------------------------
-	#COMLAN Giovanni ----->   https://github.com/ComlanGiovanni
-	#NADEAU BOBAN    ----->   https://github.com/nadeauboban
-	#Etienne Gobion  ----->   https://github.com/etiennegithub
+Avant de ferme le megre mettre tout le fichier dans un dossier php
+sinon c'est le bordel aprés !!!
+
+Ah oui heuumm vue que le php marche avec l'html t'utilise l'html dans
+ton dossier de travail si t'es pas content pas c'est comme ça enfaite lol !!!!
+
+S'il y'a du php a mettre directement les modif dans le dossier htmlphp ou dans un branche htmlphp qui auras éte crée 
+
+Bon enfaite je ne sais pas encore quoi faire je fait juste les base du git 
+et l'architecture du site viendras àpres !!!!
