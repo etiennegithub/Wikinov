@@ -1,5 +1,9 @@
 # Wikinov
-
+```php
+<?php
+   echo 'Hello world';
+?>
+```
 La plateforme a été realiser avec #PHP #HTML #CSS #JS #BOOSTRAP plus précisement avec le theme flatly de #bootswatch (https://bootswatch.com/).
 
 #Collaborateur
