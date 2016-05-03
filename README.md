@@ -1,6 +1,6 @@
 #html
 
-Avant de ferme le megre mettre tout le fichier dans un dossier html
+Avant de faire le megre mettre tout le fichier dans un dossier html
 sinon c'est le bordel aprés !
 
 FRAMEWORK
