@@ -1,3 +1,0 @@
-# Présentation
-
--Powerpoint ou Prézi
