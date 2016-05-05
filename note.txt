@@ -2,7 +2,7 @@
            _--^^^#####//      \\#####^^^--_           		| 
         _-^##########// (    ) \\##########^-_        		| *Faire une documention / wiki sur git
        -############//  |\^^/|  \\############-       		| *Mobile First
-     _/############//   (@::@)   \\############\_     		| *Ne pas commit avec le mot de passe de vos base de donnée 
+     _/############//   (@::@)   \\############\_     		| *Avoir le meme mot de passe : rootgio
     /#############((     \\//     ))#############\    		| *Planfication et répartition des taches / trello
    -###############\\    (oo)    //###############-   		| *Verification des failles : XSS CRSF SQLI LFI INCLUDE/ .htacess
   -#################\\  / VV \  //#################-  		| *Commenter son code
