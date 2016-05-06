@@ -1,0 +1,53 @@
+/*
+@font-face {
+font-family: GrandHotel;
+src: url(GrandHotel-Regular.otf);
+}
+*/
+
+.logoynov {
+    height: 150px;
+    width: 150px;
+    padding-bottom: 30px;
+    text-align: center;
+    margin: auto;
+
+}
+
+.logowiki {
+    padding-top: 10px;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    margin: auto;
+}
+
+div.alert-danger {
+    text-align: center;
+    margin: auto;
+}
+
+div.alert-success {
+    text-align: center;
+    margin: auto;
+}
+
+div.alert-info {
+    text-align: center;
+    margin: auto;
+}
+
+.classdecentragelol {
+    margin: auto;
+    display: block;
+}
+
+label {
+    display:block;
+    text-align: center;
+}
+
+.form-control{
+    text-align: center;
+    border: 2px solid red;
+}
