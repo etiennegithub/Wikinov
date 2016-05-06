@@ -9,5 +9,4 @@ gd
 
 php5 -i | grep -i --color gd
 php -i | grep -i --color gd
-https://www.youtube.com/watch?v=DaR9_mIdQ18
 
