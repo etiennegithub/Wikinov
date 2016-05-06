@@ -28,6 +28,14 @@ function upload($index,$destination,$extension=false,$maxsize=false,$size=false)
         return false;
     }
     return move_uploaded_file($_FILES[$index]['tmp_name'], $destination.mt_rand(0,1000).$_FILES[$index]['name']);
+    /*$chemin = "testup/".$_SESSION['id'].".".$extensionUpload;
+
+    $update = $bdd->prepare('UPDATE membres SET avatar = :avatar WHERE id = :id');
+                    $update->execute(array(
+                        'avatar' => $_SESSION['id'].".".$extensionUpload,
+                        'id' => $_SESSION['id']
+                    ));
+    */
 }
 
 if (!empty($_POST['submit'])){
