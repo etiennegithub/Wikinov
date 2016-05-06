@@ -35,6 +35,9 @@ function upload($index,$destination,$extension=false,$maxsize=false,$size=false)
                         'avatar' => $_SESSION['id'].".".$extensionUpload,
                         'id' => $_SESSION['id']
                     ));
+
+
+    <img src="chemiin/cemin/<?php echo $SESSION['user']['avatar'];?>" >
     */
 }
 
