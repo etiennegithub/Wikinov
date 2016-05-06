@@ -6,7 +6,7 @@
         if ($_FILES['avatar']['size'] <= $taillemax){
             $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'],'.'),1));
             if (in_array($extensionUpload, $extensionValides)){
-                $chemin = "testup/".".".$extensionUpload;
+                $chemin = "avatar/".".".$extensionUpload;
                 /*$chemin = "testup/".$_SESSION['id'].".".$extensionUpload;*/
                 $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'],$chemin);
                 if ($resultat){
