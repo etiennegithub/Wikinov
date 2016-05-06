@@ -47,5 +47,5 @@ _#/|##########/\######(   /\   )######/\##########|\#_		|
 								|	
 			-Composer*				|	systéme de messagerie en php ou avec des sockets
 			-Cakephp*				|	
-			-laravel				|
+			-laravel				|	tuto dans images/
 			-Syfony					|
