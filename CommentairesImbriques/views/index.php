@@ -22,9 +22,9 @@
 
         <?php  endif; ?>
 
-        <?php $comments = new App\($app->pdo); ?>
+        <?php $comments = new App\Comments($app->pdo); ?>
 
-        <?php foreach($comments->findAllWithChildren() as $comment); ?>
+        <?php foreach($comments->findAllWithChildren(1) as $comment); ?>
 
             <?php  require('comment.php'); ?>
 
