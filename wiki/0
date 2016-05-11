@@ -1,0 +1,47 @@
+Actiter l'extenstion gd2
+
+http://www.cyberciti.biz/faq/ubuntu-linux-install-or-add-php-gd-support-to-apache/
+
+savoir s'il est activer
+
+php5 -m | grep -i gd
+gd
+php5 -i | grep -i --color gd
+php -i | grep -i --color gd
+
+https://www.youtube.com/watch?v=DaR9_mIdQ18
+https://www.youtube.com/watch?v=DSmmK57b3n4
+http://sebsauvage.net/comprendre/unites/
+http://bcrypthashgenerator.apphb.com/
+https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql
+
+admin*
+secu
+notifhtml*
+chat*
+commentaire*
+https://www.grafikart.fr/formations/programmation-objet-php
+https://parse.com/docs/ios/guide#push-notifications
+
+username	
+
+
+
+a lire si le temps
+https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql/la-programmation-orientee-objet-6
+https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql/organiser-son-code-selon-l-architecture-mvc
+https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql/proteger-un-dossier-avec-un-htaccess
+https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql
+https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql/proteger-un-dossier-avec-un-htaccess
+
+de tout les façon ta le livres
+<div class="Lj2DYGJ8WUos-bg" style="display: block; background: rgba(0, 0, 0, 0.901961);"></div>
+<?php
+$fp = fopen('somefile.txt', 'r');
+if (!$fp) {
+    echo 'Impossible d\'ouvrir le fichier somefile.txt';
+}
+while (false !== ($char = fgetc($fp))) {
+    echo "$char\n";
+}
+?>
