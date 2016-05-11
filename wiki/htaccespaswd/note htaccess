@@ -1,0 +1,8 @@
+Options -Indexes #pour autoriser completement
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "/var/www/html/wiki/htaccespaswd/.htpasswd" #realpath('realpath.php');
+Require valid-user
+
+jul:$1$OCSuupGU$gx9e.0yiIjMo1dGT2sNH21
+usernmae:motdepasse crypter avec crypt('mdp');
