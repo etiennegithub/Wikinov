@@ -53,7 +53,6 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
         <link rel="shortcut icon" href="https://www.ynov.com/wp-content/uploads/2014/01/favicon1.ico" />
         <link rel="icon" type="image/x-icon" href="https://www.ynov.com/wp-content/uploads/2014/01/favicon1.ico" />
         <link rel="icon" type="image/png" href="https://www.ynov.com/wp-content/uploads/2014/01/favicon1.png" />
-
         <!--
 <link rel="stylesheet" href="../css/style.css">
 -->

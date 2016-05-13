@@ -11,8 +11,8 @@ if(session_status() == PHP_SESSION_NONE){
 
     <?php foreach($_SESSION['flash'] as $type => $message):?>
         <div class="container">
-          <!-- bordel ça marche pas -->
-           <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
+            <!-- bordel ça marche pas -->
+            <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
             <div class="alert alert-<?= $type; ?>">
 
                 <?= $message; ?>
@@ -29,8 +29,8 @@ if(session_status() == PHP_SESSION_NONE){
 
     <?php foreach($_SESSION['flash2'] as $type => $message2):?>
         <div class="container">
-          <!-- bordel ça marche pas -->
-           <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
+            <!-- bordel ça marche pas -->
+            <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
             <div class="alert alert-<?= $type; ?>">
 
                 <?= $message2; ?>
@@ -57,4 +57,19 @@ if(session_status() == PHP_SESSION_NONE){
     <?php endforeach; ?>
 
     <?php unset($_SESSION["flash3"]); ?>
+<?php endif; ?>
+
+<?php if(isset($_SESSION['flash4'])):?>
+
+    <?php foreach($_SESSION['flash4'] as $type => $message4):?>
+        <!-- bordel ça marche pas -->
+        <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
+        <div class="alert alert-<?= $type; ?>">
+
+            <?= $message4; ?>
+
+        </div>
+    <?php endforeach; ?>
+
+    <?php unset($_SESSION["flash4"]); ?>
 <?php endif; ?>

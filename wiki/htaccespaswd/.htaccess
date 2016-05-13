@@ -1,6 +1,6 @@
 Options -Indexes
-AuthName "Page d'administration protégée"
-AuthType Basic
-AuthUserFile "/var/www/html/wiki/htaccespaswd/.htpasswd"
-Require valid-user
+#AuthName "Page d'administration protégée"
+#AuthType Basic
+#AuthUserFile "/var/www/html/wiki/htaccespaswd/.htpasswd"
+#Require valid-user
 
