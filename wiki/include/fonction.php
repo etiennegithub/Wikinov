@@ -55,9 +55,23 @@ function log_only_first(){
      */
 }
 
+function log_admin_first(){
+    if (session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    if (($_SESSION['auth']->admin_bool) == 0) {
+        header('Location: ../index.php');
+        exit();
+    }
+    /*
+     *Cette fonction autorise ou non la connexion a une page dans ke cas contraire renvoie sur la page de connexion
+     */
+}
+
 function log_re(){
     if(isset($_SESSION['auth'])){
-        header('Location: account.php');
+        header('Location: ../wiki/pages/account.php');
         exit();
     }
     /*

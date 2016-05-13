@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/forum2/css/boostrapcyborg.css">
 <div class="row" style="border: solid 1px #b60c35">
     <div class="col-xs-2">
-        <img src="/forum2/avatar/domo.jpg" width="100%">
+        <img src="/wiki/img_avatar/newup/comgiov.gif" width="100%">
 
         <!--https://fr.gravatar.com/avatar/-->
         <!--

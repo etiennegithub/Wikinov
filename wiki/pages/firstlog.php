@@ -1,6 +1,8 @@
 <?php
 require_once '../include/fonction.php';
 log_only_first();
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 /*
  * $2a$06$boQTUrC8R5ReGf5Eh8R8te8UOerTG9icz4pJ8.TCk2UisvF7rwk8W
  * */
@@ -8,12 +10,13 @@ if (!empty($_POST)) {
     $error_1 = array();
 
     $description_secu = htmlspecialchars($_POST['description_name']);
-    $lienlinkdin = htmlspecialchars($_POST['lienlinkedin']);
-    $lientwitter = htmlspecialchars($_POST['lientwitter']);
+    $lienlinkdin = htmlspecialchars($_POST['lien_link']);
+    $lientwitter = htmlspecialchars($_POST['lien_twitter']);
     $mdpmodifn = htmlspecialchars($_POST['mdp_1']);
     $mdpmodifn2 = htmlspecialchars($_POST['mdp_2']);
     $mdptaille = strlen($_POST['mdp_1']);
-    $description_nombre =strlen($description_secu);
+
+    $description_nombre = strlen($description_secu);
     $lienlinkdin_taille = strlen($lienlinkdin);
     $lientwitter_taille = strlen($lientwitter);
 
@@ -36,22 +39,22 @@ if (!empty($_POST)) {
         $userr = $reqq->fetch();
         if (!empty($_POST['mdp_old'])){
             if (password_verify($_POST['mdp_old'], $userr->password)) {
-                if ($mdptaille > 4) {
+                if ($mdptaille > 8) {
                     $mdpsec2 = strlen($_POST['mdp_1']);
                     if ($_POST['mdp_1'] != $_POST['mdp_2']) {
                         $_SESSION['flash3']['danger'] = "Les mot de passes ne correspondent pas";
                     } else if ($_POST['mdp_1'] = $_POST['mdp_2']) {
+
                         $user_id = $_SESSION['auth']->id;
                         $passwordnew = password_hash($_POST['mdp_1'], PASSWORD_BCRYPT);
                         $reqq_2 = $db->prepare('UPDATE users SET password = ? WHERE id = ?');
                         $reqq_2->execute([$passwordnew, $user_id]);
 
                         $reqq_3 = $db->prepare('UPDATE users SET desciption = ?, lienlinkdin = ?, linktiwtter = ? WHERE id = ?');
-                        /*
-                        $reqq_3 = $db->prepare("INSERT INTO users SET desciption = ?, lienlinkdin = ?, linktiwtter = ? WHERE id = ?");*/
                         $reqq_3->execute([$description_secu, $lienlinkdin, $lientwitter, $user_id]);
 
                         $_SESSION['flash3']['success'] = "Le mot de passe a été mise a jour";
+                        
                         header('Location: firstlog_avatar.php');
                         exit();
                     }
@@ -107,7 +110,7 @@ if (!empty($_POST)) {
     <title>Première connexion</title>
     <link rel="stylesheet" href="../css/boostrap/bootswatch/bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/stylefirstlog.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="https://www.ynov.com/wp-content/uploads/2014/01/favicon1.ico" />
     <link rel="icon" type="image/x-icon" href="https://www.ynov.com/wp-content/uploads/2014/01/favicon1.ico" />
     <link rel="icon" type="image/png" href="https://www.ynov.com/wp-content/uploads/2014/01/favicon1.png" />
@@ -156,12 +159,12 @@ if (!empty($_POST)) {
 
         <div class="form-group">
             <label for="">Lien Linkdin</label>
-            <input id="label_email" type="text" name="lienlinkedin" class="form-control" placeholder="https://fr.linkedin.com/nom_dutilisateur" value="<?= (!empty($lienlinkdin))?$lienlinkdin:'' ?>"/>
+            <input id="label_email" type="text" name="lien_link" class="form-control" placeholder="https://fr.linkedin.com/nom_dutilisateur" value="<?= (!empty($lienlinkdin))?$lienlinkdin:'' ?>"/>
         </div>
 
         <div class="form-group">
             <label for="">Lien Twitter</label>
-            <input id="label_email" type="text" name="lientwitter" class="form-control" placeholder="https://twitter.com/nom_dutilisateur" value="<?= (!empty($lienlinkdin))?$lienlinkdin:'' ?>"/>
+            <input id="label_email" type="text" name="lien_twitter" class="form-control" placeholder="https://twitter.com/nom_dutilisateur" value="<?= (!empty($lienlinkdin))?$lienlinkdin:'' ?>"/>
         </div>
 
         <div class="form-group">
@@ -179,7 +182,7 @@ if (!empty($_POST)) {
             <input id="" type="text" name="mdp_2" class="form-control" value=""/>
         </div>
 
-        <button type="submit" class="btn btn-primary classdecentragelol">Enrégistrer</button>
+        <button type="submit" class="btn btn-primary classdecentragelol">Enregistrer</button>
         <br>
         <br>
         <br>

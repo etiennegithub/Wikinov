@@ -4,6 +4,11 @@ font-family: GrandHotel;
 src: url(GrandHotel-Regular.otf);
 }
 */
+.avatartaille{
+    width: 255px;
+    height: 255px;
+}
+
 .cookie_banner{
     text-align: center;
     background: red;
@@ -47,6 +52,7 @@ div.alert-info {
 .classdecentragelol {
     margin: auto;
     display: block;
+    text-align: center;
 }
 
 label {

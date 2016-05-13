@@ -1,4 +1,6 @@
 <?php
+require_once '/wiki/include/fonction.php';
+log_re();
 
 if(empty($_GET['slug'])){
     throw  new Exception('404');
@@ -64,21 +66,17 @@ Pour chaque commentaire on lui applique l'element qui se trouve dans comment.php
     </div>
 <?php endif ?>
 
-<?php if(isset($_SESSION['auth'])): ?>
-    <form action="#comment" role="form" method="post" id="comment">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="form-group">
-                    <label for="comcom">Commentaire</label>
-                    <textarea name="content" id="comcom" class="form-control"></textarea>
-                </div>
-
-                <button name="action" value="comment" type="submit" class="btn btn-primary">Envoyer</button>
+<form action="#comment" role="form" method="post" id="comment">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-group">
+                <label for="comcom">Commentaire</label>
+                <textarea name="content" id="comcom" class="form-control"></textarea>
             </div>
-    </form>
-<?php else: ?>
-    <h3>Connecé vous pour laissé un commentaire</h3>
-<?php endif; ?>
+
+            <button name="action" value="comment" type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+</form>
 
 <!--
 <div class="col-xs-6">

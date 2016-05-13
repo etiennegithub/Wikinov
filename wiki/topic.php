@@ -1,7 +1,6 @@
-<?php require 'include/header.php';?>
-<?php require 'include/basededonne.php';?>
-
 <?php
+require 'include/basededonne.php';
+
 define('DS', DIRECTORY_SEPARATOR);
 define('VIEWS', __DIR__ . DS . 'views'. DS);
 define('ELEMENT', __DIR__ . DS . 'views'. DS . 'elements' . DS);
@@ -48,8 +47,3 @@ if(file_exists('views/'. $page .'.php')){
 }
 
 require 'views/layouts/default.php';
-?>
-
-
-
-<?php require 'include/footer.php'?>

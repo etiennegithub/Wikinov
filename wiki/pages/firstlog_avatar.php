@@ -2,7 +2,8 @@
 require_once '../include/fonction.php';
 require ('../class/avatarClass.php');
 log_only_first();
-
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 $username_auth = $_SESSION['auth']->username;
 $avatar_name_file = $_SESSION['auth']->avatar;
 $chemin_img_html = "../img_avatar/newup/".$avatar_name_file;
@@ -14,7 +15,7 @@ $error = array();
 
 if (isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])){
     $taillemax = 25000000;/*en octet ma gueule 1 kil-- 1000 1mo ----- 1000000 1go ----- 1000000000*/
-    $extensionValides = array('jpg', 'jpeg', 'gif', 'png', 'bmp');
+    $extensionValides = array('jpg', 'jpeg', 'gif', 'png', 'bmp', 'svg', 'ico');
     if ($_FILES['avatar']['size'] <= $taillemax){
         $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'],'.'),1));
         if (in_array($extensionUpload, $extensionValides)){
@@ -35,7 +36,7 @@ if (isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])){
              *enter username+format dze l'image
              * */
             $user_id = $_SESSION['auth']->id;
-            $user_name = $_SESSION['auth']->name;
+            $user_name = $_SESSION['auth']->nom;
             /*
              $new_bd_name_img = $user_name.".".$extensionUpload;
             */
@@ -43,9 +44,6 @@ if (isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])){
 
             require_once '../include/basededonne.php';
 
-            /*
-                        $db->prepare('UPDATE espac_membre SET avatar = ? WHERE id = ?')->execute([$new_bd_name_img, $user_id]);
-            */
             $req = $db->prepare('UPDATE users SET avatar= ? WHERE id = ?');
             $req->execute([$new_bd_name_img, $user_id]);
 
@@ -89,7 +87,7 @@ if (isset($_POST['suivant']) AND $_POST['suivant']=='suivant_name'){
     $boool_first= 1;
     $req_2 = $db->prepare('UPDATE users SET firstlog_bool= ? WHERE id = ?');
     $req_2->execute([$boool_first,$_SESSION['auth']->id]);
-    header('Location: /wiki/account.php');
+    header('Location: /wiki/pages/account.php');
 }
 ?>
 <!DOCTYPE html>
@@ -104,7 +102,7 @@ if (isset($_POST['suivant']) AND $_POST['suivant']=='suivant_name'){
     <title>Première connexion | Avatar</title>
     <link rel="stylesheet" href="../css/boostrap/bootswatch/bootstrap.min.css">
     <link rel="stylesheet" href="../css/animate.css">
-    <link rel="stylesheet" href="../css/stylefirstlog.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="shortcut icon" href="https://www.ynov.com/wp-content/uploads/2014/01/favicon1.ico" />
     <link rel="icon" type="image/x-icon" href="https://www.ynov.com/wp-content/uploads/2014/01/favicon1.ico" />
     <link rel="icon" type="image/png" href="https://www.ynov.com/wp-content/uploads/2014/01/favicon1.png" />
@@ -112,6 +110,19 @@ if (isset($_POST['suivant']) AND $_POST['suivant']=='suivant_name'){
 <body>
 <div class="container center_all">
     <a href="../pages/logout.php" class="classdecentragelol">Deconnexion</a>
+    <?php if(!empty($error)):?>
+
+        <div class="alert alert-danger">
+            <p>Vous n'avez pas remplis les formulaire correctement</p>
+            <p>-----------------------------------------------------</p>
+            <ul>
+                <?php foreach($error as $err): ?>
+                    <li class="classdecentragelol"><?= $err; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+
+    <?php endif; ?>
     <div class="container">
         <img src="../images/logo.jpg" alt="Logo ynov" title="Logo ynov" class="animated jello img-responsive logoynov">
         <br>
