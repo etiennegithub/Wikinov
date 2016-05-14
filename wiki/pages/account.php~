@@ -1,32 +1,9 @@
 <?php
 require_once '../include/fonction.php';
 require_once '../include/basededonne.php';
-log_only();
-/*
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 log_only();
-*/
-
-$getpseudo = "admin";
-if (isset($_GET['pseudo'])){
-
-    $getpseudo_1 = htmlspecialchars($_GET['pseudo']);
-
-    $req = $db->prepare('SELECT * FROM users WHERE username = :pseudo');
-    $req->execute(['pseudo' => $getpseudo_1]);
-    $user_1 = $req->fetch();
-
-    $verif_username = $user_1->username;
-
-    if ($getpseudo_1 = $verif_username) {
-
-        $getpseudo = htmlspecialchars($_GET['pseudo']);
-    }else{
-        $getpseudo = "admin";
-    }
-
-}
 
 /*
  *
@@ -40,9 +17,12 @@ if (isset($_GET['pseudo'])){
  *
  *
  */
-$req = $db->prepare('SELECT * FROM users WHERE username = :pseudo');
-$req->execute(['pseudo' => $getpseudo]);
+$req = $db->prepare('SELECT * FROM users WHERE id = :id');
+$req->execute(['id' => $_SESSION['auth']->id]);
 $user = $req->fetch();
+
+$_SESSION['auth'] = array();
+$_SESSION['auth'] = $user;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -53,7 +33,7 @@ $user = $req->fetch();
     <meta name="description" content="WIKINOV la platforme de l'innovation!">
     <meta name="author" content="GROUPE YNOV">
     <meta name="theme-color" content="#FF2C5A">
-    <title>Profil de <?= $user->username ?></title>
+    <title>Profil de <?= $_SESSION['auth']->username ?></title>
     <link rel="stylesheet" href="../css/boostrap/bootswatch/bootstrap.min.css">
     <!--
     <link rel="stylesheet" href="./css/footer-distributed-with-address-and-phones.css">
@@ -94,7 +74,7 @@ $user = $req->fetch();
                     <li><a href="">Topic</a></li>
                     <li><a href="chat.php">Chat Public</a></li>
                     <li><a href="">Chat Privé</a></li>
-                    <li><a href="./account.php">Profil</a></li>
+                    <li class="active"><a href="./account.php">Profil</a></li>
                     <li><a href="modifprof.php">Modifier mes information</a></li>
                     <li><a href="motdepasse.php">Modifier mon mot de passe</a></li>
                     <li><a href="../pages/logout.php">Deconnexion</a></li>
@@ -104,18 +84,29 @@ $user = $req->fetch();
     </div>
 </nav>
 <?php require "../include/cookie.php"; ?>
+<?php
+require '../include/flash.php';
+/*
+ * trouver un autre moyen lol
+ * */
+require_once '../include/basededonne.php';
+$req_1 = $db->prepare('SELECT avatar FROM users WHERE id = ?');
+$req_1->execute([$_SESSION['auth']->id]);
+$avatar_1 = $req_1->fetch();
+$avatar_name_file = $avatar_1->avatar;
+?>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <img src="/wiki/img_avatar/newup/<?= $user->avatar?>" class="classdecentragelol avatartaille" alt="">
-            <h1 class="classdecentragelol">Pseudo :<?= $user->username ?></h1>
-            <h1 class="classdecentragelol">Nom :<?= $user->nom ?></h1>
-            <h1 class="classdecentragelol">Prénom :<?= $user->prenom ?></h1>
-            <h1 class="classdecentragelol">Mail: <?= $user->email ?></h1>
-            <h1 class="classdecentragelol">Date de validation <?= $user->confirmed_at ?></h1>
-            <h1 class="classdecentragelol">Description : <br><?= $user->desciption ?></h1>
-            <h1 class="classdecentragelol">Lien Linkdin: <a href="" target="_blank">Linkedin</a></h1>
-            <h1 class="classdecentragelol">Lien twitter: <a href="" target="_blank">Twitter</a></h1>
+            <img src="/wiki/img_avatar/newup/<?= $avatar_name_file ?>" class="classdecentragelol avatartaille" alt="">
+            <h1 class="classdecentragelol">Pseudo :<?= $_SESSION['auth']->username ?></h1>
+            <h1 class="classdecentragelol">Nom :<?= $_SESSION['auth']->nom ?></h1>
+            <h1 class="classdecentragelol">Prénom :<?= $_SESSION['auth']->prenom ?></h1>
+            <h1 class="classdecentragelol">Mail: <?= $_SESSION['auth']->email ?></h1>
+            <h1 class="classdecentragelol">Date de validation <?= $_SESSION['auth']->confirmed_at ?></h1>
+            <h1 class="classdecentragelol">Description : <br><?= $_SESSION['auth']->desciption ?></h1>
+            <h1 class="classdecentragelol">Lien Linkdin: <a href="<?= $_SESSION['auth']->desciption ?>" target="_blank">Linkedin</a></h1>
+            <h1 class="classdecentragelol">Lien twitter: <a href="<?= $_SESSION['auth']->desciption ?>" target="_blank">Twitter</a></h1>
         </div>
         <div class="col-md-6">
             <br>

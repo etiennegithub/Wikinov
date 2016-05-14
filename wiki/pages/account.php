@@ -1,10 +1,12 @@
 <?php
 require_once '../include/fonction.php';
 require_once '../include/basededonne.php';
+log_only();
+/*
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-log_only();
 
+*/
 /*
  *
  *On inclue le header et le footer
@@ -65,7 +67,7 @@ $_SESSION['auth'] = $user;
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="">Project name</a>
+            <a class="navbar-brand" href="">Wikinov</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
@@ -99,6 +101,16 @@ $avatar_name_file = $avatar_1->avatar;
     <div class="row">
         <div class="col-md-6">
             <img src="/wiki/img_avatar/newup/<?= $avatar_name_file ?>" class="classdecentragelol avatartaille" alt="">
+            <?php
+            $monfichier = fopen('compteur.txt', 'r+');
+            $pages_vues = fgets($monfichier);
+            $pages_vues += 1; // On augmente de 1 ce nombre de pages vues
+            fseek($monfichier, 0); // On remet le curseur au début du fichier
+            fputs($monfichier, $pages_vues); // On écrit le nouveau nombre de pages vues
+            fclose($monfichier);
+            echo '<p class="classdecentragelol">Cet profil a été vue ' . $pages_vues . ' fois !</p>';
+            fclose($monfichier);
+            ?>
             <h1 class="classdecentragelol">Pseudo :<?= $_SESSION['auth']->username ?></h1>
             <h1 class="classdecentragelol">Nom :<?= $_SESSION['auth']->nom ?></h1>
             <h1 class="classdecentragelol">Prénom :<?= $_SESSION['auth']->prenom ?></h1>
