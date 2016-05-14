@@ -30,6 +30,7 @@ if (isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])){
              *faire une seconde copy
              *si ça ne marche pas remettre la copy
              *dans
+             * fileinfo
              * */
             $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'],$chemin);
             /*

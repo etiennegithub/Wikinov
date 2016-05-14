@@ -1,6 +1,2 @@
 Options -Indexes
-AuthName "Page d'administration protégée"
-AuthType Basic
-AuthUserFile "/var/www/html/wiki/img_avatar/.htpasswd"
-Require valid-user
 

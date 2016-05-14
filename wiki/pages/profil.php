@@ -1,6 +1,7 @@
 <?php
 require_once '../include/fonction.php';
 require_once '../include/basededonne.php';
+log_only();
 /*
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
